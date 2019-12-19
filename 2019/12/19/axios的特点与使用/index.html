@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">292</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">371</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -403,8 +403,9 @@ height:50vh;
 <p>6丶请求/响应数据转换</p>
 <p>7丶自动转换 JSON 数据；</p>
 <h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><h4 id="node版安装"><a href="#node版安装" class="headerlink" title="node版安装"></a>node版安装</h4><p>npm install axios -save  可简写 npm i axios -S</p>
-<p>npm install axios -save</p>
-<p>之后在所需要的组件中引入 import axios from ‘axios’;</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios -save</span><br></pre></td></tr></table></figure>
+<p>之后在所需要的组件中引入 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br></pre></td></tr></table></figure>
 <p>或者直接在main.js文件中全局部署</p>
 <p>当然也可以用script引入</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"/axios.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
@@ -415,7 +416,10 @@ height:50vh;
 <p>2.3发送多个请求</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUser</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> axios.get(<span class="string">'/xxxx'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPassword</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.get(<span class="string">'/xxxx'</span>)</span><br><span class="line">&#125;</span><br><span class="line">axios.all([getUser(),getPassword()])</span><br><span class="line">.then(axios.spread(<span class="function"><span class="keyword">function</span>(<span class="params">acct,perms</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//ok</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
 <h3 id="4、除此之外axios还提供还有如下几种请求方式："><a href="#4、除此之外axios还提供还有如下几种请求方式：" class="headerlink" title="4、除此之外axios还提供还有如下几种请求方式："></a>4、除此之外axios还提供还有如下几种请求方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axios.request(config)</span><br><span class="line"> </span><br><span class="line">axios.get(url[, config])</span><br><span class="line"> </span><br><span class="line">axios.delete(url[, config])</span><br><span class="line"> </span><br><span class="line">axios.head(url[, config])</span><br><span class="line"> </span><br><span class="line">axios.post(url[, data[, config]])</span><br><span class="line"> </span><br><span class="line">axios.put(url[, data[, config]])</span><br><span class="line"> </span><br><span class="line">axios.patch(url[, data[, config]])</span><br></pre></td></tr></table></figure>
-
+<h3 id="5、基本配置"><a href="#5、基本配置" class="headerlink" title="5、基本配置"></a>5、基本配置</h3><p>1.//默认请求域名</p>
+<p>axios.default.baseURL=’<a href="http://api.pingcc.cn‘" target="_blank" rel="noopener">http://api.pingcc.cn‘</a></p>
+<p>2.如果请求接口有多个则需要借助axios.create()</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL=&apos;http://localhost:3000&apos;;</span><br><span class="line">axios(&#123;</span><br><span class="line">url:&apos;/posts&apos;//请求3000</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">const instance=axios.create(&#123;</span><br><span class="line">baseURL：&apos;http://localhost:4000&apos;	//请求4000</span><br><span class="line">&#125;)</span><br><span class="line">axios(&#123;</span><br><span class="line">url:&apos;/posts&apos;	//请求4000</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
     </article>
     <!-- license  -->
     
@@ -423,7 +427,7 @@ height:50vh;
             <p>原文作者：<a href="https://user.qzone.qq.com/1084491297/main">Tom</a>
             </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/</a>
             </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">December 19th 2019, 2:34:23 pm</a>
-            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">December 19th 2019, 2:34:56 pm</a>
+            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">December 19th 2019, 4:22:22 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -555,7 +559,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#axios的特点与使用"><span class="toc-number">1.</span> <span class="toc-text">axios的特点与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点"><span class="toc-number">1.1.</span> <span class="toc-text">1.特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用"><span class="toc-number">1.2.</span> <span class="toc-text">2.使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#node版安装"><span class="toc-number">1.2.1.</span> <span class="toc-text">node版安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、除此之外axios还提供还有如下几种请求方式："><span class="toc-number">1.3.</span> <span class="toc-text">4、除此之外axios还提供还有如下几种请求方式：</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#axios的特点与使用"><span class="toc-number">1.</span> <span class="toc-text">axios的特点与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点"><span class="toc-number">1.1.</span> <span class="toc-text">1.特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用"><span class="toc-number">1.2.</span> <span class="toc-text">2.使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#node版安装"><span class="toc-number">1.2.1.</span> <span class="toc-text">node版安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、除此之外axios还提供还有如下几种请求方式："><span class="toc-number">1.3.</span> <span class="toc-text">4、除此之外axios还提供还有如下几种请求方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、基本配置"><span class="toc-number">1.4.</span> <span class="toc-text">5、基本配置</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
