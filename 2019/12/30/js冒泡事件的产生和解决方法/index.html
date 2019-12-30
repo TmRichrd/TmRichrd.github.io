@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>axios的特点与使用 · SaKItama Studio</title>
+    <title>js冒泡事件的产生和解决方法 · SaKItama Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">SaKItama Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">axios的特点与使用</a>
+                <a href="#" class="post-name">js冒泡事件的产生和解决方法</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            axios的特点与使用
+            js冒泡事件的产生和解决方法
             <!-- 404 -->
             
         </h1>
@@ -266,12 +266,12 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">364</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">899</span>阅读时长: <span class="post-count reading-time">3 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/12/19</span>
+                    <span class="post-intro-time">2019/12/30</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -395,39 +395,28 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h2 id="axios的特点与使用"><a href="#axios的特点与使用" class="headerlink" title="axios的特点与使用"></a>axios的特点与使用</h2><h3 id="1-特点"><a href="#1-特点" class="headerlink" title="1.特点"></a>1.特点</h3><p>​    1丶在浏览器和node端都能使用</p>
-<p>​    2丶支持请求/相应拦截器</p>
-<p>​    3丶批量发送多个请求</p>
-<p>​    4丶能保护客户端免受XSRF攻击</p>
-<p>​    5丶支持请求取消</p>
-<p>​    6丶请求/响应数据转换</p>
-<p>​    7丶自动转换 JSON 数据；</p>
-<h3 id="2-使用"><a href="#2-使用" class="headerlink" title="2.使用"></a>2.使用</h3><h4 id="node版安装"><a href="#node版安装" class="headerlink" title="node版安装"></a>node版安装</h4><p>​    npm install axios -save  可简写 npm i axios -S</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install axios -save</span><br></pre></td></tr></table></figure>
-<p>​    之后在所需要的组件中引入 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> axios <span class="keyword">from</span> <span class="string">'axios'</span>;</span><br></pre></td></tr></table></figure>
-<p>​    或者直接在main.js文件中全局部署</p>
-<p>​    当然也可以用script引入</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"/axios.min.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-<p>2.1发送一个get请求</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">axios.get(<span class="string">'/xxxx'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">res=&gt;&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">console.log(res</span>)</span></span><br><span class="line"><span class="function">&#125;),<span class="title">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>2.2发送一个post请求</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">axios.post(<span class="string">'/xxxx'</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params">res=&gt;&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">console.log(res</span>)</span></span><br><span class="line"><span class="function">&#125;),<span class="title">function</span>(<span class="params">err</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(err)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>2.3发送多个请求</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getUser</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">	<span class="keyword">return</span> axios.get(<span class="string">'/xxxx'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getPassword</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> axios.get(<span class="string">'/xxxx'</span>)</span><br><span class="line">&#125;</span><br><span class="line">axios.all([getUser(),getPassword()])</span><br><span class="line">.then(axios.spread(<span class="function"><span class="keyword">function</span>(<span class="params">acct,perms</span>)</span>&#123;</span><br><span class="line">    <span class="comment">//ok</span></span><br><span class="line">&#125;))</span><br></pre></td></tr></table></figure>
-<h3 id="4、除此之外axios还提供还有如下几种请求方式："><a href="#4、除此之外axios还提供还有如下几种请求方式：" class="headerlink" title="4、除此之外axios还提供还有如下几种请求方式："></a>4、除此之外axios还提供还有如下几种请求方式：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">axios.request(config)</span><br><span class="line"> </span><br><span class="line">axios.get(url[, config])</span><br><span class="line"> </span><br><span class="line">axios.delete(url[, config])</span><br><span class="line"> </span><br><span class="line">axios.head(url[, config])</span><br><span class="line"> </span><br><span class="line">axios.post(url[, data[, config]])</span><br><span class="line"> </span><br><span class="line">axios.put(url[, data[, config]])</span><br><span class="line"> </span><br><span class="line">axios.patch(url[, data[, config]])</span><br></pre></td></tr></table></figure>
-<h3 id="5、基本配置"><a href="#5、基本配置" class="headerlink" title="5、基本配置"></a>5、基本配置</h3><p>​    1.//默认请求域名</p>
-<p>​    axios.default.baseURL=’<a href="http://api.pingcc.cn‘" target="_blank" rel="noopener">http://api.pingcc.cn‘</a></p>
-<p>​    2.如果请求接口有多个则需要借助axios.create()</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">axios.defaults.baseURL=<span class="string">'http://localhost:3000'</span>;</span><br><span class="line">axios(&#123;</span><br><span class="line">url:<span class="string">'/posts'</span><span class="comment">//请求3000</span></span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> instance=axios.create(&#123;</span><br><span class="line">baseURL：<span class="string">'http://localhost:4000'</span>	<span class="comment">//请求4000</span></span><br><span class="line">&#125;)</span><br><span class="line">instance(&#123;</span><br><span class="line">url:<span class="string">'/posts'</span>	<span class="comment">//请求4000</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+        <h2 id="1、什么是JS冒泡事件"><a href="#1、什么是JS冒泡事件" class="headerlink" title="1、什么是JS冒泡事件"></a><strong>1、什么是JS冒泡事件</strong></h2><p>事件从事件目标(target)开始，往上冒泡直到页面的最上一级标签。假设一个元素div，它有一个下级元素p。<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>元素<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>这两个元素都绑定了click事件，如果用户点击了p，它在div和p上都触发了click事件，那这两个事件处理程序哪个先执行呢？事件顺序是什么？<br>再比如<br><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"divOne"</span> <span class="attr">onclick</span>=<span class="string">"alert('我是最外层');"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"divTwo"</span> <span class="attr">onclick</span>=<span class="string">"alert('我是中间层！')"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">a</span> <span class="attr">id</span>=<span class="string">"hr_three"</span> <span class="attr">href</span>=<span class="string">"http://www.baidu.com"</span> <span class="attr">mce_href</span>=<span class="string">"http://www.baidu.com"</span><span class="attr">onclick</span>=<span class="string">"alert('我是最里层！')"</span>&gt;</span>点击我<span class="tag">&lt;/<span class="name">a</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure></p>
+<p>运行页面，点击“点击我”,会依次弹出：我是最里层—-&gt;我是中间层—-&gt;我是最外层<br>—-&gt;然后再链接到百度.</p>
+<p>两种模型<br>以前，Netscape和Microsoft是不同的实现方式。<br>Netscape中，div先触发，这就叫做事件捕获。<br>Microsoft中，p先触发，这就叫做事件冒泡。<br>两种事件处理顺序刚好相反。IE只支持事件冒泡，Mozilla, Opera 7 和 Konqueror两种都支持，旧版本的Opera’s 和 iCab两种都不支持 。</p>
+<h4 id="事件捕获"><a href="#事件捕获" class="headerlink" title="事件捕获"></a>事件捕获</h4><p>当你使用事件捕获时，父级元素先触发，子级元素后触发，即div先触发，p后触发。</p>
+<h4 id="事件冒泡"><a href="#事件冒泡" class="headerlink" title="事件冒泡"></a>事件冒泡</h4><p>当你使用事件冒泡时，子级元素先触发，父级元素后触发，即p先触发，div后触发。</p>
+<h4 id="W3C模型"><a href="#W3C模型" class="headerlink" title="W3C模型"></a>W3C模型</h4><p>W3C模型是将两者进行中和，在W3C模型中，任何事件发生时，先从顶层开始进行事件捕获，直到事件触发到达了事件源元素。然后，再从事件源往上进行事件冒泡，直到到达document。<br>程序员可以自己选择绑定事件时采用事件捕获还是事件冒泡，方法就是绑定事件时通过addEventListener函数，它有三个参数，第三个参数若是true，则表示采用事件捕获，若是false，则表示采用事件冒泡。<br>ele.addEventListener(‘click’,doSomething2,true)</p>
+<h4 id="true-捕获"><a href="#true-捕获" class="headerlink" title="true=捕获"></a>true=捕获</h4><h4 id="false-冒泡"><a href="#false-冒泡" class="headerlink" title="false=冒泡"></a>false=冒泡</h4><h4 id="传统绑定事件方式"><a href="#传统绑定事件方式" class="headerlink" title="传统绑定事件方式"></a>传统绑定事件方式</h4><p>在一个支持W3C DOM的浏览器中，像这样一般的绑定事件方式，是采用的事件冒泡方式。<br>ele.onclick = doSomething2</p>
+<h4 id="IE浏览器"><a href="#IE浏览器" class="headerlink" title="IE浏览器"></a>IE浏览器</h4><p>如上面所说，IE只支持事件冒泡，不支持事件捕获，它也不支持addEventListener函数，不会用第三个参数来表示是冒泡还是捕获，它提供了另一个函数attachEvent。<br>ele.attachEvent(“onclick”, doSomething2);<br>附：事件冒泡（的过程）：事件从发生的目标（event.srcElement||event.target）开始，沿着文档逐层向上冒泡，到document为止。</p>
+<h4 id="事件的传播是可以阻止的："><a href="#事件的传播是可以阻止的：" class="headerlink" title="事件的传播是可以阻止的："></a>事件的传播是可以阻止的：</h4><p>• 在W3c中，使用stopPropagation（）方法<br>• 在IE下设置cancelBubble = true；<br>在捕获的过程中stopPropagation（）；后，后面的冒泡过程也不会发生了~</p>
+<h4 id="3-阻止事件的默认行为，例如click-a后的跳转"><a href="#3-阻止事件的默认行为，例如click-a后的跳转" class="headerlink" title="3.阻止事件的默认行为，例如click a后的跳转~"></a>3.阻止事件的默认行为，例如click a后的跳转~</h4><p>• 在W3c中，使用preventDefault（）方法；<br>• 在IE下设置window.event.returnValue = false;</p>
+<h2 id="2、如何解决冒泡事件"><a href="#2、如何解决冒泡事件" class="headerlink" title="2、如何解决冒泡事件"></a><strong>2、如何解决冒泡事件</strong></h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!-- 我们先在一个div里，放置一个按钮。 --&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"bd"</span> <span class="attr">style</span>=<span class="string">"border: 1px solid red;"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">input</span> <span class="attr">type</span>=<span class="string">"button"</span> <span class="attr">value</span>=<span class="string">"点我"</span> <span class="attr">id</span>=<span class="string">"btnMe"</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">  <span class="keyword">var</span> btnMe=<span class="built_in">document</span>.getElementById(<span class="string">'btnMe'</span>)</span><br><span class="line">  <span class="comment">// 为按钮添加一个点击事件</span></span><br><span class="line">  btnMe.onclick=<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"点击了按钮"</span>)</span><br><span class="line">    <span class="comment">// 调用e.stopPropagation()方法，其中e就是事件参数。</span></span><br><span class="line">    e.stopPropagation();</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// 接着为父类盒子也添加一个点击事件</span></span><br><span class="line">  <span class="keyword">var</span> bd=<span class="built_in">document</span>.getElementById(<span class="string">'bd'</span>)</span><br><span class="line">  bd.onclick=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"点击了盒子"</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://user.qzone.qq.com/1084491297/main">Tom</a>
-            </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/</a>
-            </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">December 19th 2019, 2:34:23 pm</a>
-            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/19/axios的特点与使用/">December 28th 2019, 6:48:50 pm</a>
+            </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/30/js冒泡事件的产生和解决方法/">https://user.qzone.qq.com/1084491297/main/2019/12/30/js冒泡事件的产生和解决方法/</a>
+            </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/30/js冒泡事件的产生和解决方法/">December 30th 2019, 5:19:21 pm</a>
+            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2019/12/30/js冒泡事件的产生和解决方法/">December 30th 2019, 5:25:05 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -435,17 +424,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/12/21/2019-12-19-vuex仓库的部分使用/" title="vuex仓库的基本使用">
-                    <div class="nextTitle">vuex仓库的基本使用</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/04/23/bootstrap属性之navbar/" title="bootstrap属性之navbar">
-                    <div class="prevTitle">bootstrap属性之navbar</div>
+                <a href="/2019/12/28/vue路由导航/" title="Vue路由导航简单配置">
+                    <div class="prevTitle">Vue路由导航简单配置</div>
                 </a>
             
         </li>
@@ -564,7 +548,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#axios的特点与使用"><span class="toc-number">1.</span> <span class="toc-text">axios的特点与使用</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#1-特点"><span class="toc-number">1.1.</span> <span class="toc-text">1.特点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#2-使用"><span class="toc-number">1.2.</span> <span class="toc-text">2.使用</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#node版安装"><span class="toc-number">1.2.1.</span> <span class="toc-text">node版安装</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#4、除此之外axios还提供还有如下几种请求方式："><span class="toc-number">1.3.</span> <span class="toc-text">4、除此之外axios还提供还有如下几种请求方式：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#5、基本配置"><span class="toc-number">1.4.</span> <span class="toc-text">5、基本配置</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1、什么是JS冒泡事件"><span class="toc-number">1.</span> <span class="toc-text">1、什么是JS冒泡事件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#事件捕获"><span class="toc-number">1.0.1.</span> <span class="toc-text">事件捕获</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件冒泡"><span class="toc-number">1.0.2.</span> <span class="toc-text">事件冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#W3C模型"><span class="toc-number">1.0.3.</span> <span class="toc-text">W3C模型</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#true-捕获"><span class="toc-number">1.0.4.</span> <span class="toc-text">true=捕获</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#false-冒泡"><span class="toc-number">1.0.5.</span> <span class="toc-text">false=冒泡</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#传统绑定事件方式"><span class="toc-number">1.0.6.</span> <span class="toc-text">传统绑定事件方式</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#IE浏览器"><span class="toc-number">1.0.7.</span> <span class="toc-text">IE浏览器</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#事件的传播是可以阻止的："><span class="toc-number">1.0.8.</span> <span class="toc-text">事件的传播是可以阻止的：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-阻止事件的默认行为，例如click-a后的跳转"><span class="toc-number">1.0.9.</span> <span class="toc-text">3.阻止事件的默认行为，例如click a后的跳转~</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2、如何解决冒泡事件"><span class="toc-number">2.</span> <span class="toc-text">2、如何解决冒泡事件</span></a></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
