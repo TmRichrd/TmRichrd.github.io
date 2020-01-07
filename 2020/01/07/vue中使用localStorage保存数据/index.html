@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SaKItama Studio</title>
+    <title>vue中使用localStorage保存数据 · SaKItama Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">SaKItama Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vue中使用localStorage保存数据</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">SaKItama Studio.</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            vue中使用localStorage保存数据
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">608</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/01/07</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,190 +393,65 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/01/07/vue中使用localStorage保存数据/">
-            
-                <span>vue中使用localStorage保存数据</span>
-        </a>
-        <div class="abstract-content">
-            vue中使用localStorage保存数据一、什么是localStorage对浏览器来说，使用 Web Storage 存储键值对比存储 Cookie 方式更直观，而且容量更大，它包含两种：localStorage 和 sessionStorage
-1.sessionStorage（临时存储） ：为每一个数据源维持一个存储区域，在浏览器打开期间存在，包括页面重新加载2.localStorage（长期存储） ：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在
-二、使用方法注意:sessionStorage 和 localStorage 的用法基本一致，引用类型...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="vue中使用localStorage保存数据"><a href="#vue中使用localStorage保存数据" class="headerlink" title="vue中使用localStorage保存数据"></a><strong>vue中使用localStorage保存数据</strong></h2><h3 id="一、什么是localStorage"><a href="#一、什么是localStorage" class="headerlink" title="一、什么是localStorage"></a><strong>一、什么是localStorage</strong></h3><p><strong>对浏览器来说，使用 Web Storage 存储键值对比存储 Cookie 方式更直观，而且容量更大，它包含两种：localStorage 和 sessionStorage</strong><br><br></p>
+<p><strong>1.sessionStorage（临时存储） ：为每一个数据源维持一个存储区域，在浏览器打开期间存在，包括页面重新加载<br><br>2.localStorage（长期存储） ：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在</strong></p>
+<h3 id="二、使用方法"><a href="#二、使用方法" class="headerlink" title="二、使用方法"></a><strong>二、使用方法</strong></h3><p><strong>注意:sessionStorage 和 localStorage 的用法基本一致，引用类型的值要转换成JSON,所以这里就只列举localStorage</strong><br></p>
+<p><strong>1.保存</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//定义需要保存的数据</span></span><br><span class="line"><span class="comment">//对象</span></span><br><span class="line"><span class="keyword">let</span> comments=&#123;<span class="attr">index</span>:<span class="keyword">this</span>.index,<span class="attr">name</span>:<span class="keyword">this</span>.name&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串</span></span><br><span class="line"><span class="keyword">let</span> comment=<span class="keyword">this</span>.name</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">//searchList为保存的key值</span></span><br><span class="line"><span class="keyword">let</span> list=<span class="built_in">JSON</span>.parse(localStorage.get(<span class="string">"searchList"</span>) ||<span class="string">'[]'</span>)</span><br><span class="line">list.push(comment)</span><br><span class="line"><span class="comment">//这是使用$lodash之后添加的代码</span></span><br><span class="line">list = <span class="keyword">this</span>.$lodash.unionBy(list, <span class="string">'name'</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//对象</span></span><br><span class="line">localStorage.setItem(<span class="string">'searchList'</span> ||<span class="string">'[]'</span>, <span class="built_in">JSON</span>.stringify(list))</span><br><span class="line"></span><br><span class="line"><span class="comment">//字符串</span></span><br><span class="line">localStorage.setItem(<span class="string">'zifuc'</span>, comment)</span><br></pre></td></tr></table></figure></p>
+<p><strong>注意：如果你希望保存的内容不重复，那么可以使用$lodash</strong></p>
+<p><strong>下载$lodash</strong><br><br><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install lodash -save</span><br></pre></td></tr></table></figure></p>
+<p>main.js文件<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> lodash <span class="keyword">from</span> <span class="string">'lodash'</span></span><br><span class="line">Vue.prototype.$lodash = lodash</span><br></pre></td></tr></table></figure></p>
+<p><strong>2.获取key中的数值</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">// 在data中定义你需要赋值的数值</span></span><br><span class="line">data () &#123;</span><br><span class="line">  <span class="keyword">return</span> &#123;</span><br><span class="line">    <span class="comment">//例如搜索记录</span></span><br><span class="line">    searchArr:<span class="built_in">JSON</span>.parse(localStorage.searchArr),</span><br><span class="line">  &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">//methods方法获取 两种任意选一种</span></span><br><span class="line">  methods:&#123;</span><br><span class="line">    getLocalStorage()&#123;</span><br><span class="line">      <span class="keyword">var</span> search=<span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">"searchList"</span> ||<span class="string">'[]'</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><strong>3.删除</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//删除其中一个key值</span></span><br><span class="line">localStorage.removeItem(<span class="string">"searchList"</span>)</span><br><span class="line"><span class="comment">//删除所有key</span></span><br><span class="line">localStorage.clear()</span><br></pre></td></tr></table></figure></p>
+<p><strong>4.监听</strong></p>
+<p><strong>Storage 发生变化（增加、更新、删除）时的 触发，同一个页面发生的改变不会触发，只会监听同一域名下其他页面改变 Storage</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">  <span class="built_in">window</span>.addEventListener(<span class="string">'storage'</span>, <span class="function"><span class="keyword">function</span> (<span class="params">e</span>) </span>&#123;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'key'</span>, e.key);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'oldValue'</span>, e.oldValue);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'newValue'</span>, e.newValue);</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">'url'</span>, e.url);</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>5.实践</strong></p>
+<p><strong>实现默认记住我上次的选择</strong></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(localStorage.length&gt;<span class="number">0</span>)&#123;</span><br><span class="line">              <span class="keyword">var</span> mydata = localStorage.getItem(<span class="string">'projectId'</span>);</span><br><span class="line">              <span class="keyword">if</span>(mydata!=<span class="literal">null</span>)&#123;</span><br><span class="line">                  <span class="keyword">var</span> arr3=mydata.split(<span class="string">","</span>);</span><br><span class="line">                  <span class="keyword">if</span>(arr3[<span class="number">0</span>]==me.workhourData.projectId)&#123;</span><br><span class="line">                      me.workhourData.projectManager=arr3[<span class="number">1</span>];</span><br><span class="line">                  &#125;</span><br><span class="line">              &#125;</span><br><span class="line">          &#125;</span><br></pre></td></tr></table></figure>
+<p><strong>6.tips</strong></p>
+<p><strong>localStorage有效期是永久的。一般的浏览器能存储的是5MB左右。<br><br>sessionStorage api与localStorage相同。<br><br>sessionStorage默认的有效期是浏览器的会话时间（也就是说标签页关闭后就消失了）<br><br>localStorage作用域是协议、主机名、端口。（理论上，不人为的删除，一直存在设备中<br><br>sessionStorage作用域是窗口、协议、主机名、端口。<br><br>localStorage是window上的。所以不需要写this.localStorage，vue中如果写this，是指vue实例。会报错</strong></p>
+
     </article>
+    <!-- license  -->
     
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/12/30/js冒泡事件的产生和解决方法/">
-            
-                <span>js冒泡事件的产生和解决方法</span>
-        </a>
-        <div class="abstract-content">
-            1、什么是JS冒泡事件事件从事件目标(target)开始，往上冒泡直到页面的最上一级标签。假设一个元素div，它有一个下级元素p。123&lt;div&gt;&lt;p&gt;元素&lt;/p&gt;&lt;/div&gt;
-这两个元素都绑定了click事件，如果用户点击了p，它在div和p上都触发了click事件，那这两个事件处理程序哪个先执行呢？事件顺序是什么？再比如12345&lt;div id="divOne" onclick="alert('我是最外层');"&gt;  &lt;div id="divTwo" onclick="alert('我是中间层！')"&gt;    &...
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://user.qzone.qq.com/1084491297/main">Tom</a>
+            </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2020/01/07/vue中使用localStorage保存数据/">https://user.qzone.qq.com/1084491297/main/2020/01/07/vue中使用localStorage保存数据/</a>
+            </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/01/07/vue中使用localStorage保存数据/">January 7th 2020, 3:56:14 pm</a>
+            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/01/07/vue中使用localStorage保存数据/">January 7th 2020, 3:58:10 pm</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/30</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/12/28/vue路由导航/">
-            
-                <span>Vue路由导航简单配置</span>
-        </a>
-        <div class="abstract-content">
-            Vue路由导航简单配置路由导航完整解析流程123456789101112/* 1.导航被触发2.在失活的组件（即将离开的页面组件）里调用离开守卫beforeRouterLeave3.调用全局的前置守卫 beforeEach4.在重用的组件里调用 beforeRouteUpdate5.调用路由独享的守卫 beforeEnter6.解析异步路由组件7.在被激活的组件（即将进入的页面组件）里调用 beforeRouterEnter8.调用全局的解析守卫 beforeResolve9.导航被确认10.调用全局的后置守卫 afterEach11.触发DOM更新渲染12.用创建好的实例调用befor...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/12/21/2019-12-19-vuex仓库的部分使用/">
-            
-                <span>vuex仓库的基本使用</span>
-        </a>
-        <div class="abstract-content">
-            Vuex仓库的基本使用1丶在vue项目中引入vuex1npm install vuex -save
-main.js文件123456789101112import store from './store/index'import Vuex from 'vuex'Vue.use(Vuex)new Vue(&#123;  el: '#app',  router,  store,	//添加的部分  components: &#123; App &#125;,  template: '&lt;App/&gt;',  render: h =&gt; h(App)	//添加的部分&#125;)
-2丶新...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/21</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/12/19/axios的特点与使用/">
-            
-                <span>axios的特点与使用</span>
-        </a>
-        <div class="abstract-content">
-            axios的特点与使用1.特点​    1丶在浏览器和node端都能使用
-​    2丶支持请求/相应拦截器
-​    3丶批量发送多个请求
-​    4丶能保护客户端免受XSRF攻击
-​    5丶支持请求取消
-​    6丶请求/响应数据转换
-​    7丶自动转换 JSON 数据；
-2.使用node版安装​    npm install axios -save  可简写 npm i axios -S
-1npm install axios -save
-​    之后在所需要的组件中引入 
-1import axios from 'axios';
-​    或者直接在main.js文件中...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/19</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/23/bootstrap属性之navbar/">
-            
-                <span>bootstrap属性之navbar</span>
-        </a>
-        <div class="abstract-content">
-            bootstrap导航栏–引入bootstap链接1&lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"&gt;
-注意！必须先导入jQuery-3.3.1.min.js和bootstrap.min.js文件
-navbar标签1&lt;nav class="navbar/*表明是导航条*/ navbar-default/*默认样式或者navbar-inverse为黑色主题*/ navbar-fixed-top/*位于顶部*/" &gt;&l...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/23</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/04/17/JavaScript对象/">
-            
-                <span>JavaScript对象</span>
-        </a>
-        <div class="abstract-content">
-            JavaScript对象JavaScript 对象是拥有属性和方法的数据。对象属性可以说 “JavaScript 对象是变量的容器”。但是，我们通常认为 “JavaScript 对象是键值对的容器”。键值对通常写法为 name : value (键与值以冒号分割)。键值对在 JavaScript 对象通常称为 对象属性。
-对象定义你可以使用字符来定义和创建 JavaScript 对象:123456  var person = &#123;    firstName:"John",    lastName:"Doe",    age:50,    eyeColor:"blue"&#125;...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/17</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/12/30/js冒泡事件的产生和解决方法/" title="js冒泡事件的产生和解决方法">
+                    <div class="prevTitle">js冒泡事件的产生和解决方法</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -606,6 +536,24 @@ navbar标签1&lt;nav class="navbar/*表明是导航条*/ navbar-default/*默认�
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#vue中使用localStorage保存数据"><span class="toc-number">1.</span> <span class="toc-text">vue中使用localStorage保存数据</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#一、什么是localStorage"><span class="toc-number">1.1.</span> <span class="toc-text">一、什么是localStorage</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#二、使用方法"><span class="toc-number">1.2.</span> <span class="toc-text">二、使用方法</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -816,6 +764,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
