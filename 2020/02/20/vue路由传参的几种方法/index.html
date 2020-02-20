@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>SaKItama Studio</title>
+    <title>vue路由传参的几种方法 · SaKItama Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -203,12 +203,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">SaKItama Studio.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">vue路由传参的几种方法</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">SaKItama Studio.</a>
 </header>
@@ -220,24 +231,68 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            vue路由传参的几种方法
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">494</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2020/02/20</span>
+                    
+                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
+                        <span class="iconfont-archer">&#xe602;</span>
+                        <span id="busuanzi_value_page_pv"></span>
+                    </span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -338,35 +393,75 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/01/07/vue中使用localStorage保存数据/">
-            
-                <span>vue中使用localStorage保存数据</span>
-        </a>
-        <div class="abstract-content">
-            vue中使用localStorage保存数据一、什么是localStorage对浏览器来说，使用 Web Storage 存储键值对比存储 Cookie 方式更直观，而且容量更大，它包含两种：localStorage 和 sessionStorage
-1.sessionStorage（临时存储） ：为每一个数据源维持一个存储区域，在浏览器打开期间存在，包括页面重新加载2.localStorage（长期存储） ：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在
-二、使用方法注意:sessionStorage 和 localStorage 的用法基本一致，引用类型...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
+            <main class="main post-page">
+    <article class="article-entry">
+        <h2 id="Vue路由传参的几种方法"><a href="#Vue路由传参的几种方法" class="headerlink" title="Vue路由传参的几种方法"></a><strong>Vue路由传参的几种方法</strong></h2><h3 id="vue-router传递参数分为两大类"><a href="#vue-router传递参数分为两大类" class="headerlink" title="vue-router传递参数分为两大类"></a><strong>vue-router传递参数分为两大类</strong></h3><ul>
+<li><strong>编程式的导航 router.push</strong></li>
+<li><strong>声明式的导航 router-link</strong></li>
+</ul>
+<hr>
+<h3 id="编程式的导航-router-push"><a href="#编程式的导航-router-push" class="headerlink" title="编程式的导航 router.push"></a><strong>编程式的导航 router.push</strong></h3><p><strong>编程式导航传递参数有两种类型：字符串、对象。</strong></p>
+<h4 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a><strong>字符串</strong></h4><p><strong>字符串的方式是直接将路由地址以字符串的方式来跳转，这种方式很简单但是不能传递参数：</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(<span class="string">"home"</span>)</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h4 id="对象"><a href="#对象" class="headerlink" title="对象"></a><strong>对象</strong></h4><p><strong>想要传递参数主要就是以对象的方式来写，分为两种方式：命名路由、查询参数，下面分别说明两种方式的用法和注意事项。</strong></p>
+<hr>
+<h4 id="命名路由"><a href="#命名路由" class="headerlink" title="命名路由"></a><strong>命名路由</strong></h4><p><strong>如果用params传递参数需要在path后面加上对应的参数如：path:’/home/:id/‘</strong></p>
+<p><strong>router.js</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path:<span class="string">'/home/:id/'</span>,  <span class="comment">//id为需要传递的参数</span></span><br><span class="line">  name:<span class="string">'home'</span>,</span><br><span class="line">  component:home</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>vue传递参数页面</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(&#123;<span class="attr">name</span>:<span class="string">'home'</span>,<span class="attr">params</span>:&#123;<span class="attr">id</span>:<span class="number">123</span>&#125;&#125;)</span><br></pre></td></tr></table></figure></p>
+<p><strong>需要接收参数的页面</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.params.id</span><br></pre></td></tr></table></figure></p>
+<p><strong><font color="#fbbc05">!!!params 刷新会丢失params里面的数据<br>!!!params传参只能用name</font></strong></p>
+<hr>
+<h4 id="查询参数"><a href="#查询参数" class="headerlink" title="查询参数"></a><strong>查询参数</strong></h4><p><strong>查询参数其实就是在路由地址后面带上参数和传统的url参数一致的，传递参数使用query而且必须配合path来传递参数而不能用name，目标页面接收传递的参数使用query。</strong></p>
+<p><strong><font color="#fbbc05">!!!使用query传参并不需要在router.js中配置参数<br>!!!query 刷新不会丢失 query里面的数据<br>!!!query传参既可以用path，也可以用name</font></strong></p>
+<p><strong>vue传递参数页面</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.push(&#123; <span class="attr">path</span>: <span class="string">'/news'</span>, <span class="attr">query</span>: &#123; <span class="attr">id</span>: <span class="number">123</span> &#125;&#125;);</span><br></pre></td></tr></table></figure></p>
+<p><strong>接收参数页面</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">this</span>.$router.query.id</span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="声明式的导航"><a href="#声明式的导航" class="headerlink" title="声明式的导航"></a><strong>声明式的导航</strong></h3><p><strong>字符串</strong><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"home"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<p><strong>命名路由</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"&#123;name:home,params:&#123;id:123&#125;&#125;"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+<hr>
+<h3 id="props传参"><a href="#props传参" class="headerlink" title="props传参"></a><strong>props传参</strong></h3><p><strong>router.js</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  path:<span class="string">'/home/:id/'</span>,  <span class="comment">//id为需要传递的参数</span></span><br><span class="line">  name:<span class="string">'home'</span>,</span><br><span class="line">  component:home,</span><br><span class="line">  props:<span class="literal">true</span>, <span class="comment">//设置props</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p><strong>传参页面</strong></p>
+<p><strong>同样需要在router.js path中添加参数</strong><br><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link :to=<span class="string">"'/home/'+id"</span>&gt;<span class="xml"><span class="tag">&lt;/<span class="name">router-link</span>&gt;</span></span></span><br></pre></td></tr></table></figure></p>
+
     </article>
+    <!-- license  -->
+    
+        <div class="license-wrapper">
+            <p>原文作者：<a href="https://user.qzone.qq.com/1084491297/main">Tom</a>
+            </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2020/02/20/vue路由传参的几种方法/">https://user.qzone.qq.com/1084491297/main/2020/02/20/vue路由传参的几种方法/</a>
+            </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/02/20/vue路由传参的几种方法/">February 20th 2020, 10:19:08 am</a>
+            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/02/20/vue路由传参的几种方法/">February 20th 2020, 11:04:33 am</a>
+            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
+        </div>
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2020/01/07/vue中使用localStorage保存数据/" title="vue中使用localStorage保存数据">
+                    <div class="prevTitle">vue中使用localStorage保存数据</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -451,6 +546,24 @@
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Vue路由传参的几种方法"><span class="toc-number">1.</span> <span class="toc-text">Vue路由传参的几种方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#vue-router传递参数分为两大类"><span class="toc-number">1.1.</span> <span class="toc-text">vue-router传递参数分为两大类</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#编程式的导航-router-push"><span class="toc-number">1.2.</span> <span class="toc-text">编程式的导航 router.push</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#字符串"><span class="toc-number">1.2.1.</span> <span class="toc-text">字符串</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#对象"><span class="toc-number">1.2.2.</span> <span class="toc-text">对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#命名路由"><span class="toc-number">1.2.3.</span> <span class="toc-text">命名路由</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#查询参数"><span class="toc-number">1.2.4.</span> <span class="toc-text">查询参数</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#声明式的导航"><span class="toc-number">1.3.</span> <span class="toc-text">声明式的导航</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#props传参"><span class="toc-number">1.4.</span> <span class="toc-text">props传参</span></a></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -693,6 +806,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
     <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>

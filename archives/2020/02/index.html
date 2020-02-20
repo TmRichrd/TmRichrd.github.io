@@ -346,19 +346,28 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2020/01/07/vue中使用localStorage保存数据/">
+        <a class="abstract-title" href="/2020/02/20/vue路由传参的几种方法/">
             
-                <span>vue中使用localStorage保存数据</span>
+                <span>vue路由传参的几种方法</span>
         </a>
         <div class="abstract-content">
-            vue中使用localStorage保存数据一、什么是localStorage对浏览器来说，使用 Web Storage 存储键值对比存储 Cookie 方式更直观，而且容量更大，它包含两种：localStorage 和 sessionStorage
-1.sessionStorage（临时存储） ：为每一个数据源维持一个存储区域，在浏览器打开期间存在，包括页面重新加载2.localStorage（长期存储） ：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在
-二、使用方法注意:sessionStorage 和 localStorage 的用法基本一致，引用类型...
+            Vue路由传参的几种方法vue-router传递参数分为两大类
+编程式的导航 router.push
+声明式的导航 router-link
+
+
+编程式的导航 router.push编程式导航传递参数有两种类型：字符串、对象。
+字符串字符串的方式是直接将路由地址以字符串的方式来跳转，这种方式很简单但是不能传递参数：1this.$router.push("home")
+
+对象想要传递参数主要就是以对象的方式来写，分为两种方式：命名路由、查询参数，下面分别说明两种方式的用法和注意事项。
+
+命名路由如果用params传递参数需要在path后面加上对应的参数如：path:’/home/:id/‘
+...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/20</span>
             </div>
             <!-- tags  -->
             
