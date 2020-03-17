@@ -78,8 +78,6 @@
     <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
     <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
     
-    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
-    
     <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
 /* This file is meant as a standalone workflow for
 - testing support for link[rel=preload]
@@ -203,8 +201,10 @@
 </head>
 
     
+        <body class="home-body">
     
-<header class="header">
+    
+<header class="header index-header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
@@ -220,21 +220,34 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 文章页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/index-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
             
+            SaKItama Studio.
+            <!-- 文章页  -->
+            
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
+            
+            
+                it's better to burn out than to fade away
+            
+            <!-- 文章页  -->
             
         </p>
         <!-- 文章页meta -->
@@ -346,24 +359,19 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2020/03/17/smooth-scroll插件实现平滑滚动/">
+        <a class="abstract-title" href="/2019/04/23/bootstrap属性之navbar/">
             
-                <span>smooth-scroll插件实现平滑滚动</span>
+                <span>bootstrap属性之navbar</span>
         </a>
         <div class="abstract-content">
-            smooth-scroll插件实现平滑滚动开始使用smooth-scroll官网
-引入文件
-1&lt;script src="https://cdn.bootcss.com/smooth-scroll/16.1.0/smooth-scroll.polyfills.min.js"&gt;&lt;/script&gt;
-教程参数：
-href: 需要点击才能跳转的按钮或者button
-option: 参数
-1const scroll=new SmoothScroll(href,&#123;option&#125;)
-12345678910111213141516//滑动到的位置的偏移量  of...
+            bootstrap导航栏–引入bootstap链接1&lt;link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet"&gt;
+注意！必须先导入jQuery-3.3.1.min.js和bootstrap.min.js文件
+navbar标签1&lt;nav class="navbar/*表明是导航条*/ navbar-default/*默认样式或者navbar-inverse为黑色主题*/ navbar-fixed-top/*位于顶部*/" &gt;&l...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/23</span>
             </div>
             <!-- tags  -->
             
@@ -376,125 +384,18 @@ option: 参数
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2020/03/01/node-js-mongoose实现数据分页效果/">
+        <a class="abstract-title" href="/2019/04/17/JavaScript对象/">
             
-                <span>node.js+mongoose实现数据分页效果</span>
+                <span>JavaScript对象</span>
         </a>
         <div class="abstract-content">
-            node.js+mongoose实现数据分页效果1.连接数据库创建model123456789101112131415161718192021222324252627282930313233343536373839404142434445464748var mongoose = require('mongoose')var Schema = mongoose.Schemamongoose.connect('mongodb://localhost/test')var topicSchema = new Schema(&#123;  // 标题  title: &#123;    type:...
+            JavaScript对象JavaScript 对象是拥有属性和方法的数据。对象属性可以说 “JavaScript 对象是变量的容器”。但是，我们通常认为 “JavaScript 对象是键值对的容器”。键值对通常写法为 name : value (键与值以冒号分割)。键值对在 JavaScript 对象通常称为 对象属性。
+对象定义你可以使用字符来定义和创建 JavaScript 对象:123456  var person = &#123;    firstName:"John",    lastName:"Doe",    age:50,    eyeColor:"blue"&#125;...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/01</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/02/22/nod学习笔记-fs/">
-            
-                <span>nod学习笔记-fs</span>
-        </a>
-        <div class="abstract-content">
-            node 学习-fs引入 fs1var fs = require('fs')
-读取文件实例12345678// 文件目录fs.readFile('input.txt', function(err, data) &#123;  if (err) &#123;    return console.log('读取文件失败!')  &#125;  // data只支持二进制和字符串,所以需要添加toString()方法  res.end(data.toString())&#125;)
-写入文件语法以下为异步模式下写入文件的语法格式：
-1fs.writeFile(file, data[, opti...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/22</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/02/20/Glide轮播图/">
-            
-                <span>Glide.js库实现轮播图</span>
-        </a>
-        <div class="abstract-content">
-            
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/02/20/vue路由传参的几种方法/">
-            
-                <span>vue路由传参的几种方法</span>
-        </a>
-        <div class="abstract-content">
-            Vue路由传参的几种方法vue-router传递参数分为两大类
-编程式的导航 router.push
-声明式的导航 router-link
-
-
-编程式的导航 router.push编程式导航传递参数有两种类型：字符串、对象。
-字符串字符串的方式是直接将路由地址以字符串的方式来跳转，这种方式很简单但是不能传递参数：1this.$router.push("home")
-
-对象想要传递参数主要就是以对象的方式来写，分为两种方式：命名路由、查询参数，下面分别说明两种方式的用法和注意事项。
-
-命名路由如果用params传递参数需要在path后面加上对应的参数如：path:’/home/:id/‘
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/20</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/01/07/vue中使用localStorage保存数据/">
-            
-                <span>vue中使用localStorage保存数据</span>
-        </a>
-        <div class="abstract-content">
-            vue中使用localStorage保存数据一、什么是localStorage对浏览器来说，使用 Web Storage 存储键值对比存储 Cookie 方式更直观，而且容量更大，它包含两种：localStorage 和 sessionStorage
-1.sessionStorage（临时存储） ：为每一个数据源维持一个存储区域，在浏览器打开期间存在，包括页面重新加载2.localStorage（长期存储） ：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在
-二、使用方法注意:sessionStorage 和 localStorage 的用法基本一致，引用类型...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/04/17</span>
             </div>
             <!-- tags  -->
             
@@ -503,8 +404,109 @@ option: 参数
     
     <!-- paginator  -->
     
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/">&#60; PREV</a><a class="page-number" href="/">1</a><span class="page-number current">2</span>
+    </nav>
+    
 </main>
             <!-- profile -->
+            
+            <div class="profile">
+    <img class="profile-avatar" alt="avatar" src="/avatar/Mis.jpg">
+    <div class="profile-name">SaKItama</div>
+    
+    <div class="profile-signature">
+        witness me
+    </div>
+    
+    
+    <div class="profile-social">
+        
+    
+        
+            
+                <a href="mailto:1084491297@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/TmRichrd" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/erweima.jpg">
+                </span>
+            
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+        
+    
+
+    </div>
+    
+    
+        <div class="friends">
+            <div>FRIENDS</div>
+            
+                
+                    <span>
+                        <a href="//www.baidu.com" target="_black">friendA</a>
+                    </span>
+                
+            
+                
+                    <span>
+                        <a href="//www.google.com" target="_black">friendB</a>
+                    </span>
+                
+            
+                
+            
+        </div>
+    
+    
+        <div class="about-me">
+            <a href="/about">ABOUT ME</a>
+        </div>
+    
+</div>
             
         </div>
         <footer class="footer footer-unloaded">
