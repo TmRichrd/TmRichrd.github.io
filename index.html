@@ -359,6 +359,31 @@ height:50vh;
     
     
     <article class="index-post">
+        <a class="abstract-title" href="/2020/03/19/createElement和innerHtml、document-writer的区别/">
+            
+                <span>createElement和innerHTML、document.write的性能比较</span>
+        </a>
+        <div class="abstract-content">
+            createElement 和 innerHTML、document.write 的性能比较12&lt;button class="btn"&gt;点击&lt;/button&gt;&lt;p&gt;abc&lt;/p&gt;
+1234567// 三种创建元素区别// 1.document.write()var btn = document.querySelector('btn')btn.onclick = function() &#123;  document.write('&lt;div&gt;123&lt;/div&gt;')&#125;// 2.innerHTML
+缺点：docu...
+        </div>
+        <div class="abstract-post-meta">
+            <!-- date  -->
+            <div class="abstract-date">
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
+            </div>
+            <!-- tags  -->
+            
+        </div>
+    </article>
+    
+    
+    
+    
+    
+    
+    <article class="index-post">
         <a class="abstract-title" href="/2020/03/18/闭包实现点赞案例应用/">
             
                 <span>闭包实现点赞案例应用</span>
@@ -437,15 +462,15 @@ option: 参数
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2020/02/22/nod学习笔记-fs/">
+        <a class="abstract-title" href="/2020/02/22/node学习笔记-fs/">
             
-                <span>nod学习笔记-fs</span>
+                <span>node学习笔记-fs</span>
         </a>
         <div class="abstract-content">
-            node 学习-fs引入 fs1var fs = require('fs')
+            node 学习-fse引入 fs1var fs = require('fs')
 读取文件实例12345678// 文件目录fs.readFile('input.txt', function(err, data) &#123;  if (err) &#123;    return console.log('读取文件失败!')  &#125;  // data只支持二进制和字符串,所以需要添加toString()方法  res.end(data.toString())&#125;)
 写入文件语法以下为异步模式下写入文件的语法格式：
-1fs.writeFile(file, data[, opti...
+1fs.writeFile(file, data[, opt...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
@@ -580,31 +605,6 @@ option: 参数
             <!-- date  -->
             <div class="abstract-date">
                 <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/28</span>
-            </div>
-            <!-- tags  -->
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/12/21/2019-12-19-vuex仓库的部分使用/">
-            
-                <span>vuex仓库的基本使用</span>
-        </a>
-        <div class="abstract-content">
-            Vuex仓库的基本使用1丶在vue项目中引入vuex1npm install vuex -save
-main.js文件123456789101112import store from './store/index'import Vuex from 'vuex'Vue.use(Vuex)new Vue(&#123;  el: '#app',  router,  store,	//添加的部分  components: &#123; App &#125;,  template: '&lt;App/&gt;',  render: h =&gt; h(App)	//添加的部分&#125;)
-2丶新...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/12/21</span>
             </div>
             <!-- tags  -->
             
@@ -940,9 +940,42 @@ main.js文件123456789101112import store from './store/index'import Vuex from 'v
     
     
     
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     <div class="total-and-search">
         <div class="total-archive">
-        Total : 13
+        Total : 14
         </div>
         <!-- search  -->
         
@@ -955,6 +988,11 @@ main.js文件123456789101112import store from './store/index'import Vuex from 'v
     
     <div class="archive-year"> 2020 </div>
     <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">03/19</span><a class="archive-post-title" href="/2020/03/19/createElement和innerHtml、document-writer的区别/">createElement和innerHTML、document.write的性能比较</a>
+        </li>
     
     
         <li class="archive-post-item">
@@ -973,7 +1011,7 @@ main.js文件123456789101112import store from './store/index'import Vuex from 'v
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">02/22</span><a class="archive-post-title" href="/2020/02/22/nod学习笔记-fs/">nod学习笔记-fs</a>
+            <span class="archive-post-date">02/22</span><a class="archive-post-title" href="/2020/02/22/node学习笔记-fs/">node学习笔记-fs</a>
         </li>
     
     
