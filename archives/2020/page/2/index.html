@@ -346,93 +346,36 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2020/03/19/createElement和innerHtml、document-writer的区别/">
+        <a class="abstract-title" href="/2020/01/07/vue中使用localStorage保存数据/">
             
-                <span>createElement和innerHTML、document.write的性能比较</span>
+                <span>vue中使用localStorage保存数据</span>
         </a>
         <div class="abstract-content">
-            createElement 和 innerHTML、document.write 的性能比较12&lt;button class="btn"&gt;点击&lt;/button&gt;&lt;p&gt;abc&lt;/p&gt;
-1234567// 三种创建元素区别// 1.document.write()var btn = document.querySelector('btn')btn.onclick = function() &#123;  document.write('&lt;div&gt;123&lt;/div&gt;')&#125;// 2.innerHTML
-缺点：docu...
+            vue中使用localStorage保存数据一、什么是localStorage对浏览器来说，使用 Web Storage 存储键值对比存储 Cookie 方式更直观，而且容量更大，它包含两种：localStorage 和 sessionStorage
+1.sessionStorage（临时存储） ：为每一个数据源维持一个存储区域，在浏览器打开期间存在，包括页面重新加载2.localStorage（长期存储） ：与 sessionStorage 一样，但是浏览器关闭后，数据依然会一直存在
+二、使用方法注意:sessionStorage 和 localStorage 的用法基本一致，引用类型...
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/19</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/01/07</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="html js 性能">html js 性能</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="vue localStorage">vue localStorage</a>
     
 </div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/03/18/闭包实现点赞案例应用/">
-            
-                <span>闭包实现点赞案例应用</span>
-        </a>
-        <div class="abstract-content">
-            闭包实现点赞案例应用什么是闭包(1)函数A里面有一个函数B，函数B可以访问到函数A里的值，这就是闭包，不一定要函数返回函数；(2)在js中闭包的意义就是为了让函数可以间接访问到其他函数内部的值；
-Demo
-123456789101112131415161718192021222324252627282930&lt;style&gt;    * &#123;      padding: 0;      margin: 0;      box-sizing: border-box;    &#125;    .content &#123;      display: flex;      j...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/18</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="js 闭包">js 闭包</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2020/03/17/smooth-scroll插件实现平滑滚动/">
-            
-                <span>smooth-scroll插件实现平滑滚动</span>
-        </a>
-        <div class="abstract-content">
-            smooth-scroll插件实现平滑滚动开始使用smooth-scroll官网
-引入文件
-1&lt;script src="https://cdn.bootcss.com/smooth-scroll/16.1.0/smooth-scroll.polyfills.min.js"&gt;&lt;/script&gt;
-教程参数：
-href: 需要点击才能跳转的按钮或者button
-option: 参数
-1const scroll=new SmoothScroll(href,&#123;option&#125;)
-12345678910111213141516//滑动到的位置的偏移量  of...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/03/17</span>
-            </div>
-            <!-- tags  -->
             
         </div>
     </article>
     
     <!-- paginator  -->
+    
+    <nav class="page-nav">
+        <a class="extend prev" rel="prev" href="/archives/2020/">&#60; PREV</a><a class="page-number" href="/archives/2020/">1</a><span class="page-number current">2</span>
+    </nav>
     
 </main>
             <!-- profile -->
