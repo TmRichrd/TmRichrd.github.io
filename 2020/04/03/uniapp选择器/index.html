@@ -22,7 +22,7 @@
     <meta name="description" content>
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>createElement和innerHTML、document.write的性能比较 · SaKItama Studio</title>
+    <title>uniapp选择器 · SaKItama Studio</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -217,7 +217,7 @@
                 <a href="/">SaKItama Studio.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">createElement和innerHTML、document.write的性能比较</a>
+                <a href="#" class="post-name">uniapp选择器</a>
             </div>
     </div>
     
@@ -247,7 +247,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            createElement和innerHTML、document.write的性能比较
+            uniapp选择器
             <!-- 404 -->
             
         </h1>
@@ -266,18 +266,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="html js 性能">html js 性能</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="uniapp 选择器">uniapp 选择器</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">237</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">412</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2020/03/19</span>
+                    <span class="post-intro-time">2020/04/03</span>
                     
                     <span id="busuanzi_container_page_pv" class="busuanzi-pv">
                         <span class="iconfont-archer">&#xe602;</span>
@@ -401,22 +401,71 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <h1 id="createElement-和-innerHTML、document-write-的性能比较"><a href="#createElement-和-innerHTML、document-write-的性能比较" class="headerlink" title="createElement 和 innerHTML、document.write 的性能比较"></a><strong>createElement 和 innerHTML、document.write 的性能比较</strong></h1><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span>&gt;</span>点击<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">p</span>&gt;</span>abc<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 三种创建元素区别</span></span><br><span class="line"><span class="comment">// 1.document.write()</span></span><br><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelector(<span class="string">'btn'</span>)</span><br><span class="line">btn.onclick = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">document</span>.write(<span class="string">'&lt;div&gt;123&lt;/div&gt;'</span>)</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 2.innerHTML</span></span><br></pre></td></tr></table></figure>
-<p><strong>缺点：document.write 是直接将内容写入页面的内容流，但是文档执行完毕，他就会导致页面全部重新绘制</strong></p>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 2.innerHTML</span></span><br><span class="line"><span class="keyword">var</span> inner = <span class="built_in">document</span>.createElement(<span class="string">'.inner'</span>)</span><br><span class="line">inner.innerHTML = <span class="string">'&lt;a href="www.baidu.com"&gt;百度&lt;/a&gt;'</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 3.document.createElement</span></span><br><span class="line"><span class="keyword">var</span> create = <span class="built_in">document</span>.querySelector(<span class="string">'.create'</span>)</span><br><span class="line"><span class="keyword">var</span> a = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">create.appendChild(a)</span><br></pre></td></tr></table></figure>
-<h2 id="性能比较"><a href="#性能比较" class="headerlink" title="性能比较"></a><strong>性能比较</strong></h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// innerHTML拼接字符串</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="keyword">var</span> str = <span class="string">''</span></span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">document</span>.body.innerHTML += <span class="string">'&lt;a href=""&gt;百度&lt;/a&gt;'</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="built_in">console</span>.log(d2 - d1) <span class="comment">// 2529ms左右</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// document.createElement</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">fn1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> bodyEl = <span class="built_in">document</span>.body</span><br><span class="line">  <span class="keyword">var</span> d1 = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; <span class="number">1000</span>; i++) &#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="keyword">as</span> = <span class="built_in">document</span>.createElement(<span class="string">'a'</span>)</span><br><span class="line">    <span class="keyword">as</span>.innerHTML = <span class="string">'百度'</span></span><br><span class="line">    bodyEl.appendChild(<span class="keyword">as</span>)</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">var</span> d2 = <span class="keyword">new</span> <span class="built_in">Date</span>()</span><br><span class="line">  <span class="built_in">console</span>.log(d2 - d1) <span class="comment">//3ms左右</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+        <h1 id="uniapp选择器"><a href="#uniapp选择器" class="headerlink" title="uniapp选择器"></a><strong>uniapp选择器</strong></h1><h4 id="picker"><a href="#picker" class="headerlink" title="## picker"></a><a href="https://uniapp.dcloud.io/component/picker?id=picker" target="_blank" rel="noopener">## picker</a></h4><h2 id="自定义选择器"><a href="#自定义选择器" class="headerlink" title="自定义选择器"></a><strong>自定义选择器</strong></h2><p><code>model = selector</code></p>
+<h2 id="参数"><a href="#参数" class="headerlink" title="参数"></a><strong>参数</strong></h2><table>
+<thead>
+<tr>
+<th>属性名</th>
+<th style="text-align:center">类型</th>
+<th style="text-align:left"><strong>说明</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>range</td>
+<td style="text-align:center">Array / Array＜Object＞</td>
+<td style="text-align:left">mode为 selector 或 multiSelector 时，range 有效</td>
+</tr>
+<tr>
+<td>range-key</td>
+<td style="text-align:center">String</td>
+<td style="text-align:left">当 range 是一个 Array＜Object＞ 时，通过 range-key 来指定 Object 中 key 的值作为选择器显示内容</td>
+</tr>
+<tr>
+<td>value</td>
+<td style="text-align:center">Number</td>
+<td style="text-align:left">value 的值表示选择了 range 中的第几个（下标从 0 开始）</td>
+</tr>
+<tr>
+<td>@change</td>
+<td style="text-align:center">EventHandle</td>
+<td style="text-align:left">value 改变时触发 change 事件，event.detail = {value: value}</td>
+</tr>
+<tr>
+<td>disabled</td>
+<td style="text-align:center">Boolean</td>
+<td style="text-align:left">是否禁用</td>
+</tr>
+<tr>
+<td>@cancel</td>
+<td style="text-align:center">EventHandle</td>
+<td style="text-align:left">50</td>
+</tr>
+<tr>
+<td>hover-stay-time</td>
+<td style="text-align:center">Number</td>
+<td style="text-align:left">取消选择或点遮罩层收起 picker 时触发</td>
+</tr>
+</tbody>
+</table>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;picker mode=<span class="string">"selector"</span> @click=<span class="string">"changeSelector"</span>&gt;</span><br><span class="line">			&#123;&#123;years[year]&#125;&#125;</span><br><span class="line">&lt;<span class="regexp">/picker&gt; </span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    data()&#123;</span></span><br><span class="line"><span class="regexp">        return&#123;</span></span><br><span class="line"><span class="regexp">years: ['请选择年份', 1998, 1999, 2000, 2001],</span></span><br><span class="line"><span class="regexp">    year:0</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">&#125;    </span></span><br><span class="line"><span class="regexp">        methods:&#123;</span></span><br><span class="line"><span class="regexp">            changeSelector(e)&#123;</span></span><br><span class="line"><span class="regexp">                this.year=e.target.value</span></span><br><span class="line"><span class="regexp">                console.log(e)</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">        &#125;</span></span><br><span class="line"><span class="regexp">&lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="时间选择器"><a href="#时间选择器" class="headerlink" title="时间选择器"></a><strong>时间选择器</strong></h2><p><code>model = time</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//start开始时间 end结束时间</span></span><br><span class="line">&lt;picker mode=<span class="string">"time"</span> start=<span class="string">"09:01"</span> end=<span class="string">"21:01"</span> @change=<span class="string">"changeTime"</span>&gt;</span><br><span class="line">			&#123;&#123;city&#125;&#125;</span><br><span class="line">&lt;<span class="regexp">/picker&gt;</span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    methods:&#123;</span></span><br><span class="line"><span class="regexp">        changeTime(e) &#123;</span></span><br><span class="line"><span class="regexp">				this.city = e.detail.value</span></span><br><span class="line"><span class="regexp">				console.log(e);</span></span><br><span class="line"><span class="regexp">			&#125;</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">    </span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<h2 id="地区选择器"><a href="#地区选择器" class="headerlink" title="地区选择器"></a><strong>地区选择器</strong></h2><p><code>mode = region</code></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&lt;picker mode=<span class="string">"region"</span> @change=<span class="string">"changeCity"</span>&gt;</span><br><span class="line">			&#123;&#123;city&#125;&#125;</span><br><span class="line">&lt;<span class="regexp">/picker&gt; </span></span><br><span class="line"><span class="regexp">&lt;script&gt;</span></span><br><span class="line"><span class="regexp">    data()&#123;</span></span><br><span class="line"><span class="regexp">return&#123;</span></span><br><span class="line"><span class="regexp">    city:"请选择城市"</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    methods:&#123;</span></span><br><span class="line"><span class="regexp">        changeCity(e) &#123;</span></span><br><span class="line"><span class="regexp">				this.city = e.detail.value</span></span><br><span class="line"><span class="regexp">				console.log(e);</span></span><br><span class="line"><span class="regexp">			&#125;</span></span><br><span class="line"><span class="regexp">    &#125;</span></span><br><span class="line"><span class="regexp">    &lt;/</span>script&gt;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>在picker内容还在滚动时或滚动回弹动画还未结束时，点确定关闭弹出的picker，数据无法及时更新。需等待一下，或手动触停滚动再点确定。所有平台均如此</li>
+<li>如果需要在PC端使用<code>picker</code>，需注意pc端没有touchmove事件，可以配置<a href="https://uniapp.dcloud.io/collocation/manifest?id=h5-template" target="_blank" rel="noopener">H5模版</a>，并引入<a href="https://github.com/dcloudio/touchemulator" target="_blank" rel="noopener">touch-emulator.js</a>来解决。hello uni-app的pc版也是使用了这个方案。</li>
+</ul>
 
     </article>
     <!-- license  -->
     
         <div class="license-wrapper">
             <p>原文作者：<a href="https://user.qzone.qq.com/1084491297/main">Tom</a>
-            </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2020/03/19/createElement和innerHtml、document-writer的区别/">https://user.qzone.qq.com/1084491297/main/2020/03/19/createElement和innerHtml、document-writer的区别/</a>
-            </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/03/19/createElement和innerHtml、document-writer的区别/">March 19th 2020, 11:58:32 am</a>
-            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/03/19/createElement和innerHtml、document-writer的区别/">April 1st 2020, 11:36:21 am</a>
+            </p><p>原文链接：<a href="https://user.qzone.qq.com/1084491297/main/2020/04/03/uniapp选择器/">https://user.qzone.qq.com/1084491297/main/2020/04/03/uniapp选择器/</a>
+            </p><p>发表日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/04/03/uniapp选择器/">April 3rd 2020, 12:55:34 pm</a>
+            </p><p>更新日期：<a href="https://user.qzone.qq.com/1084491297/main/2020/04/03/uniapp选择器/">April 3rd 2020, 1:14:33 pm</a>
             </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -424,17 +473,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2020/04/01/判断页面是否加载完成以及添加数据请求加载动画/" title="判断页面是否加载完成以及添加数据请求加载动画">
-                    <div class="nextTitle">判断页面是否加载完成以及添加数据请求加载动画</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2020/03/18/闭包实现点赞案例应用/" title="闭包实现点赞案例应用">
-                    <div class="prevTitle">闭包实现点赞案例应用</div>
+                <a href="/2020/04/01/js防抖与节流/" title="js防抖与节流">
+                    <div class="prevTitle">js防抖与节流</div>
                 </a>
             
         </li>
@@ -553,7 +597,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#createElement-和-innerHTML、document-write-的性能比较"><span class="toc-number">1.</span> <span class="toc-text">createElement 和 innerHTML、document.write 的性能比较</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#性能比较"><span class="toc-number">1.1.</span> <span class="toc-text">性能比较</span></a></li></ol></li></ol>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#uniapp选择器"><span class="toc-number">1.</span> <span class="toc-text">uniapp选择器</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#picker"><span class="toc-number">1.0.0.1.</span> <span class="toc-text">## picker</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自定义选择器"><span class="toc-number">1.1.</span> <span class="toc-text">自定义选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#参数"><span class="toc-number">1.2.</span> <span class="toc-text">参数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#时间选择器"><span class="toc-number">1.3.</span> <span class="toc-text">时间选择器</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#地区选择器"><span class="toc-number">1.4.</span> <span class="toc-text">地区选择器</span></a></li></ol></li></ol>
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
