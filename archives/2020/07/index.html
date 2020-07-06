@@ -346,26 +346,34 @@
     
     
     <article class="index-post">
-        <a class="abstract-title" href="/2020/02/22/node学习笔记-fs/">
+        <a class="abstract-title" href="/2020/07/06/git多人协同常用命令/">
             
-                <span>node学习笔记-fs</span>
+                <span>git多人协同常用命令</span>
         </a>
         <div class="abstract-content">
-            node 学习-fse引入 fs1var fs = require('fs')
-读取文件实例12345678// 文件目录fs.readFile('input.txt', function(err, data) &#123;  if (err) &#123;    return console.log('读取文件失败!')  &#125;  // data只支持二进制和字符串,所以需要添加toString()方法  res.end(data.toString())&#125;)
-写入文件语法以下为异步模式下写入文件的语法格式：
-1fs.writeFile(file, data[, opt...
+            1.关联仓库git remote add origin xxxxxxxx.git
+2.拉取远程代码git pull origin master
+3.拉取远程分支代码查看远程分支git branch -r
+拉取远程分支代码git fetch origin 分支名
+新建本地分支git checkout -b 分支名
+把拉取下来的代码放进本地分支git pull origin 分支名
+4.请求合并git checkout 自己本地分支
+git add .
+git commit -m&#39;填写信息&#39;
+git push
+git merge master
+
         </div>
         <div class="abstract-post-meta">
             <!-- date  -->
             <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/02/22</span>
+                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2020/07/06</span>
             </div>
             <!-- tags  -->
             
             <div class="abstract-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="node.js fs">node.js fs</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="git">git</a>
     
 </div>
             
